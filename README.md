@@ -2,6 +2,18 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Useful links
+
+### React & TypeScript
+https://reactjs.org/docs/thinking-in-react.html
+https://react-typescript-cheatsheet.netlify.app/docs/basic/getting-started/basic_type_example
+
+### Styleguide
+https://github.com/airbnb/javascript/tree/master/react
+
+### Router
+https://reactrouter.com/web/guides/quick-start
+
 ## Available Scripts
 
 In the project directory, you can run:

@@ -1,26 +1,39 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import FilterableProductTable from "./components/products_poc/FilterableProductTable";
+import { Home } from "./components/Home";
+import { BrowserRouter, Link, Route, Switch } from "react-router-dom";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <BrowserRouter>
+            <div>
+                <nav>
+                    <ul>
+                        <li>
+                            <Link to="/">Home</Link>
+                        </li>
+                        <li>
+                            <Link to="/products">Products</Link>
+                        </li>
+                    </ul>
+                </nav>
+                <hr />
+
+                <Switch>
+                    <Route path="/products">
+                        <FilterableProductTable/>
+                    </Route>
+                    <Route path="/">
+                        <Home/>
+                    </Route>
+                </Switch>
+
+                <hr />
+                <span>Footer</span>
+            </div>
+        </BrowserRouter>
+    );
 }
 
 export default App;
