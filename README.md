@@ -14,6 +14,18 @@ https://github.com/airbnb/javascript/tree/master/react
 ### Router
 https://reactrouter.com/web/guides/quick-start
 
+### Tailwind components
+https://www.creative-tim.com/learning-lab/tailwind/react/overview/notus
+
+### Tailwind videos
+https://www.youtube.com/watch?v=_H38A6E8Nsg
+https://www.youtube.com/watch?v=_JhTaENzfZQ
+https://www.youtube.com/watch?v=7gX_ApBeSpQ
+https://www.youtube.com/watch?v=TQFW3AtrDw4 (dropdown menu)
+
+### SVG generator
+https://maketext.io/
+
 ## Available Scripts
 
 In the project directory, you can run:
