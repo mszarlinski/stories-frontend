@@ -8,8 +8,8 @@ function App() {
   return (
     <div className="font-sans leading-tight px-36">
       <BrowserRouter>
-          <Navbar />
-          <Routes />
+        <Navbar />
+        <Routes />
       </BrowserRouter>
     </div>
   );

@@ -32,7 +32,8 @@
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "format": "prettier --write src/**/*.ts{,x}"
   },
   "eslintConfig": {
     "extends": [
@@ -53,6 +54,7 @@
     ]
   },
   "devDependencies": {
-    "@types/react-router-dom": "^5.1.6"
+    "@types/react-router-dom": "^5.1.6",
+    "prettier": "^2.2.1"
   }
 }

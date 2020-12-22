@@ -1,7 +1,7 @@
-import React from 'react';
-import ProductRow from './ProductRow';
-import { Product } from '../../http/Api';
-import ProductCategoryRow from './ProductCategoryRow';
+import React from "react";
+import ProductRow from "./ProductRow";
+import { Product } from "../../http/Api";
+import ProductCategoryRow from "./ProductCategoryRow";
 
 type Props = {
   products: Product[];
@@ -9,18 +9,28 @@ type Props = {
   searchFilter: string;
 };
 
-const ProductTable: React.FC<Props> = ({ products, stockFilter, searchFilter }) => {
+const ProductTable: React.FC<Props> = ({
+  products,
+  stockFilter,
+  searchFilter,
+}) => {
   let lastCategory: string | null = null;
 
   const rows: JSX.Element[] = [];
 
   const valid = (p: Product) =>
-    (!stockFilter || p.stocked === stockFilter) && (!searchFilter || p.name.indexOf(searchFilter) !== -1);
+    (!stockFilter || p.stocked === stockFilter) &&
+    (!searchFilter || p.name.indexOf(searchFilter) !== -1);
 
   products.forEach((product) => {
     if (valid(product)) {
       if (product.category !== lastCategory) {
-        rows.push(<ProductCategoryRow key={product.category} category={product.category} />);
+        rows.push(
+          <ProductCategoryRow
+            key={product.category}
+            category={product.category}
+          />
+        );
       }
       rows.push(<ProductRow product={product} key={product.name} />);
       lastCategory = product.category;

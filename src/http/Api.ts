@@ -1,4 +1,5 @@
-import { HttpClient } from './HttpClient';
+import { AxiosResponse } from "axios";
+import { HttpClient } from "./HttpClient";
 
 export interface Product {
   category: string;
@@ -20,4 +21,5 @@ export interface Products {
 //     {category: "Electronics", price: "$199.99", stocked: true, name: "Nexus 7"}
 // ] as Product[];
 
-export const GetProducts = () => HttpClient.get<Products>('/products');
+export const GetProducts: () => Promise<AxiosResponse<Products>> = () =>
+  HttpClient.get<Products>("/products");

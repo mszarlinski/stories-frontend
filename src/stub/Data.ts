@@ -7,7 +7,7 @@ export const STORIES: Story[] = [
     preview: "Java is a great programming language",
     url: "/programming-with-streams-in-java-12345",
     publishDate: "Nov 8",
-    readingTimeMins: 7
+    readingTimeMins: 7,
   },
   {
     id: "83613",
@@ -15,8 +15,8 @@ export const STORIES: Story[] = [
     preview: "Some content",
     url: "/programming-with-streams-in-java-12345",
     publishDate: "Dec 17",
-    readingTimeMins: 3
-  }
+    readingTimeMins: 3,
+  },
 ];
 
 export const ARTICLES: Article[] = [
@@ -25,76 +25,76 @@ export const ARTICLES: Article[] = [
     author: "Piotr Kowalski",
     url: "/programming-with-streams-in-java-12345",
     publishDate: "Nov 8",
-    readingTimeMins: 7
+    readingTimeMins: 7,
   },
   {
     title: "Short title",
     author: "Piotr Kowalski",
     url: "/programming-with-streams-in-java-12345",
     publishDate: "Nov 8",
-    readingTimeMins: 7
+    readingTimeMins: 7,
   },
   {
     title: "Programming with Streams in Java",
     author: "Piotr Kowalski",
     url: "/programming-with-streams-in-java-12345",
     publishDate: "Nov 8",
-    readingTimeMins: 7
+    readingTimeMins: 7,
   },
   {
     title: "Short title",
     author: "Piotr Kowalski",
     url: "/programming-with-streams-in-java-12345",
     publishDate: "Nov 8",
-    readingTimeMins: 7
+    readingTimeMins: 7,
   },
   {
     title: "Programming with Streams in Java",
     author: "Piotr Kowalski",
     url: "/programming-with-streams-in-java-12345",
     publishDate: "Nov 8",
-    readingTimeMins: 7
+    readingTimeMins: 7,
   },
   {
     title: "Programming with Streams in Java",
     author: "Piotr Kowalski",
     url: "/programming-with-streams-in-java-12345",
     publishDate: "Nov 8",
-    readingTimeMins: 7
+    readingTimeMins: 7,
   },
   {
     title: "Programming with Streams in Java",
     author: "Piotr Kowalski",
     url: "/programming-with-streams-in-java-12345",
     publishDate: "Nov 8",
-    readingTimeMins: 7
+    readingTimeMins: 7,
   },
   {
     title: "Programming with Streams in Java",
     author: "Piotr Kowalski",
     url: "/programming-with-streams-in-java-12345",
     publishDate: "Nov 8",
-    readingTimeMins: 7
+    readingTimeMins: 7,
   },
   {
     title: "Programming with Streams in Java",
     author: "Piotr Kowalski",
     url: "/programming-with-streams-in-java-12345",
     publishDate: "Nov 8",
-    readingTimeMins: 7
+    readingTimeMins: 7,
   },
   {
     title: "Programming with Streams in Java",
     author: "Piotr Kowalski",
     url: "/programming-with-streams-in-java-12345",
     publishDate: "Nov 8",
-    readingTimeMins: 7
+    readingTimeMins: 7,
   },
   {
     title: "Programming with Streams in Java",
     author: "Piotr Kowalski",
     url: "/programming-with-streams-in-java-12345",
     publishDate: "Nov 8",
-    readingTimeMins: 7
-  }
+    readingTimeMins: 7,
+  },
 ];

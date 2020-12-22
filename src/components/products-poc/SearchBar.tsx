@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 type Props = {
   stockFilter: boolean;
@@ -7,7 +7,12 @@ type Props = {
   onSearchFilterChange(filter: string): void;
 };
 
-const SearchBar: React.FC<Props> = ({ stockFilter, onStockFilterChange, searchFilter, onSearchFilterChange }) => {
+const SearchBar: React.FC<Props> = ({
+  stockFilter,
+  onStockFilterChange,
+  searchFilter,
+  onSearchFilterChange,
+}) => {
   return (
     <form>
       <input

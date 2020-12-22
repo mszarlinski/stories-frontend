@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react';
-import SearchBar from './SearchBar';
-import ProductTable from './ProductTable';
-import { GetProducts, Product } from '../../http/Api';
+import React, { useEffect, useState } from "react";
+import SearchBar from "./SearchBar";
+import ProductTable from "./ProductTable";
+import { GetProducts, Product } from "../../http/Api";
 
 const FilterableProductTable: React.FC = () => {
-  const [searchFilter, setSearchFilter] = useState('');
+  const [searchFilter, setSearchFilter] = useState("");
   const [stockFilter, setStockFilter] = useState(false);
   const [products, setProducts] = useState([] as Product[]);
 

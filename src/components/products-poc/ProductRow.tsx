@@ -1,5 +1,5 @@
-import React from 'react';
-import { Product } from '../../http/Api';
+import React from "react";
+import { Product } from "../../http/Api";
 
 interface Props {
   product: Product;
@@ -7,8 +7,12 @@ interface Props {
 
 class ProductRow extends React.Component<Props> {
   render() {
-    const product = this.props.product;
-    const name = product.stocked ? product.name : <span style={{ color: 'red' }}>{product.name}</span>;
+    const { product } = this.props;
+    const name = product.stocked ? (
+      product.name
+    ) : (
+      <span style={{ color: "red" }}>{product.name}</span>
+    );
 
     return (
       <tr>

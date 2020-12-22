@@ -5,6 +5,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Useful links
 
 ### React & TypeScript
+https://create-react-app.dev/
 https://reactjs.org/docs/thinking-in-react.html
 https://react-typescript-cheatsheet.netlify.app/docs/basic/getting-started/basic_type_example
 
