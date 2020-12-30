@@ -27,6 +27,9 @@ https://www.youtube.com/watch?v=TQFW3AtrDw4 (dropdown menu)
 ### SVG generator
 https://maketext.io/
 
+### Deploy to AWS S3
+https://medium.com/@wolovim/deploying-create-react-app-to-s3-or-cloudfront-48dae4ce0af
+
 ## Available Scripts
 
 In the project directory, you can run:
