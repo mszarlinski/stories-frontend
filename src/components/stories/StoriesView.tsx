@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { STORIES } from "../../stub/Data";
+import { getStoriesForPublisher } from "./api";
+import { PublishedStory } from "./model";
 
 export const StoriesView = () => {
+  const [stories, setStories] = useState([] as PublishedStory[]);
+
+  useEffect(() => {
+    getStoriesForPublisher().then(setStories);
+  }, []); // run once
+
   return (
     <>
       <div className="flex justify-between mb-5">
@@ -16,14 +23,14 @@ export const StoriesView = () => {
         </div>
       </div>
       <div>
-        {STORIES.map((s) => (
+        {stories.map((s) => (
           <div className="m-3 pt-3 border-t border-gray-300" key={s.id}>
             <div className="text-md font-bold">
               <a href={s.url}>{s.title}</a>
             </div>
             <div className="text-md text-gray-500 pb-3">{s.preview}</div>
             <div className="text-sm text-gray-500 mb-1">
-              Published on {s.publishDate} · {s.readingTimeMins} min read
+              Published on {s.publishedDate} · {s.readingTimeMins} min read
             </div>
             <div className="text-sm text-gray-500 flex">
               <div className="hover:text-black mr-3">
