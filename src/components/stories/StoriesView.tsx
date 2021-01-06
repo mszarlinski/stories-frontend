@@ -37,7 +37,7 @@ export const StoriesView = () => {
                 <Link to={`/story/${s.id}/edit`}>Edit story</Link>
               </div>
               <div className="hover:text-black ">
-                <button onClick={() => alert("Story deleted!")}>
+                <button onClick={() => alert("Not implemented yet")}>
                   Delete story
                 </button>
               </div>

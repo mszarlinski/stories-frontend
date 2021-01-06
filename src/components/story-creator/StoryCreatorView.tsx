@@ -1,16 +1,28 @@
 import React, { useState } from "react";
 import { publishStory } from "./api";
+import ReactModal from "react-modal";
+import { useHistory } from "react-router-dom";
 
 export const StoryCreatorView = () => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
+  const [showModal, setShowModal] = useState(false);
+  const history = useHistory();
 
   const submitStory = () => {
     publishStory({ title: title, content: content })
       .then(
-        (r) => console.log("Story published successfully! ", r),
-        (e) => console.log("Failed to publish a story! ", e)
+        (r) => confirmPublishing(),
+        (e) => console.log("Failed to publish a story", e)
       );
+  };
+
+  const confirmPublishing = () => {
+    setShowModal(true);
+    setTimeout(() => {
+      history.push("/stories");
+      setShowModal(false);
+    }, 3000);
   };
 
   return (
@@ -40,6 +52,11 @@ export const StoryCreatorView = () => {
           Publish
         </button>
       </div>
+      <ReactModal
+        isOpen={showModal}
+      >
+        <div>Publishing your story...</div>
+      </ReactModal>
     </div>
   );
 };
