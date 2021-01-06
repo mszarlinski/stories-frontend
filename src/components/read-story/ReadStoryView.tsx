@@ -4,22 +4,22 @@ import { getStoryPage } from "./api";
 import { StoryPage } from "./model";
 
 type QueryParams = {
-  slug: string;
+  id: string;
 };
 
 export const ReadStoryView = () => {
   const [story, setStory] = useState<StoryPage>();
-  const { slug } = useParams<QueryParams>();
+  const { id } = useParams<QueryParams>(); //TODO: pretty urls with slugs
 
   useEffect(() => {
-    getStoryPage(slug).then(setStory);
-  }, [slug]); // run once
+    getStoryPage(id).then(setStory);
+  }, [id]); // run once
 
   return (
     <div className="m-5">
       <div className="text-4xl font-bold mb-3">{story?.title}</div>
       <div className="text-sm text-gray-500 mb-6">
-        {story?.author} · {story?.publishDate} · {story?.readingTimeMins} mins
+        {story?.author} · {story?.publishedDate} · {story?.readingTimeMins} mins
         read
       </div>
       <div>{story?.content}</div>

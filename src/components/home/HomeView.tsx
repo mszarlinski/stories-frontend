@@ -13,7 +13,7 @@ export const HomeView = () => {
   return (
     <div className="grid grid-cols-4 max-w-3xl">
       {stories.map((s) => (
-        <StoryThumbnail story={s} />
+        <StoryThumbnail story={s} key={s.id}/>
       ))}
     </div>
   );

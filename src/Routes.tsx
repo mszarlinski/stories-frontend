@@ -11,7 +11,7 @@ export function Routes() {
       <Route path="/stories" component={StoriesView} />
       <Route path="/new-story" component={StoryCreatorView} />
       <Route path="/story/:id/edit" component={StoryCreatorView} />
-      <Route path="/:slug" component={ReadStoryView} />
+      <Route path="/:id" component={ReadStoryView} />
       <Route path="/" component={HomeView} />
     </Switch>
   );
