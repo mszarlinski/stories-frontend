@@ -10,11 +10,10 @@ export const StoryCreatorView = () => {
   const history = useHistory();
 
   const submitStory = () => {
-    publishStory({ title: title, content: content })
-      .then(
-        (r) => confirmPublishing(),
-        (e) => console.log("Failed to publish a story", e)
-      );
+    publishStory({ title: title, content: content }).then(
+      (r) => confirmPublishing(),
+      (e) => console.log("Failed to publish a story", e)
+    );
   };
 
   const confirmPublishing = () => {
@@ -52,9 +51,7 @@ export const StoryCreatorView = () => {
           Publish
         </button>
       </div>
-      <ReactModal
-        isOpen={showModal}
-      >
+      <ReactModal isOpen={showModal}>
         <div>Publishing your story...</div>
       </ReactModal>
     </div>

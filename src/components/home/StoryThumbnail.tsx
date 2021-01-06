@@ -2,6 +2,7 @@ import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { HomePageStory } from "./model";
+import { shortDate } from "../../commons/dates";
 
 type Props = {
   story: HomePageStory;
@@ -18,7 +19,7 @@ export const StoryThumbnail: React.FC<Props> = ({ story }) => {
         <a href={`/${story.id}`}>{story.title}</a>
       </div>
       <div className="text-sm text-gray-400">
-        {story.publishedDate} · {story.readingTimeMins} min read
+        {shortDate(story.publishedDate)}
       </div>
     </div>
   );

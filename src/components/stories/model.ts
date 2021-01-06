@@ -3,7 +3,6 @@ export interface PublishedStory {
   title: string;
   preview: string;
   publishedDate: string;
-  readingTimeMins: number;
 }
 
 export interface PublishedStories {

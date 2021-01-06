@@ -3,7 +3,6 @@ export interface HomePageStory {
   title: string;
   author: string;
   publishedDate: string;
-  readingTimeMins: number;
 }
 
 export interface HomePageStories {

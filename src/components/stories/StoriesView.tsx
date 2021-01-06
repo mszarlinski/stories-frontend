@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { getStoriesForPublisher } from "./api";
 import { PublishedStory } from "./model";
+import { shortDate } from "../../commons/dates";
 
 export const StoriesView = () => {
   const [stories, setStories] = useState([] as PublishedStory[]);
@@ -30,7 +31,7 @@ export const StoriesView = () => {
             </div>
             <div className="text-md text-gray-500 pb-3">{s.preview}</div>
             <div className="text-sm text-gray-500 mb-1">
-              Published on {s.publishedDate} · {s.readingTimeMins} min read
+              Published on {shortDate(s.publishedDate)}
             </div>
             <div className="text-sm text-gray-500 flex">
               <div className="hover:text-black mr-3">

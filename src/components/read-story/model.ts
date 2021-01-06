@@ -3,5 +3,4 @@ export interface StoryPage {
   content: string;
   author: string;
   publishedDate: string;
-  readingTimeMins: number;
 }
