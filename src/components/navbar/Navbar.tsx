@@ -2,8 +2,12 @@ import React from "react";
 import { DropdownMenu } from "./DropdownMenu";
 import { SearchBar } from "./SearchBar";
 import StoriesLogo from "../../images/stories_logo.svg";
+import { useAuth } from "../auth/context";
+import { LoginButton } from "../auth/LoginButton";
 
 export function Navbar() {
+  const { token } = useAuth();
+
   return (
     <nav>
       <div className="container pb-6 mb-6 border-b border-gray-300">
@@ -15,7 +19,11 @@ export function Navbar() {
           </div>
           <div className="flex">
             <SearchBar />
-            <DropdownMenu />
+            {token ? (
+              <DropdownMenu user={token.substr(0, 3)} />
+            ) : (
+              <LoginButton />
+            )}
           </div>
         </div>
       </div>

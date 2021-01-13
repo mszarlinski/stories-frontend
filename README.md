@@ -30,6 +30,10 @@ https://maketext.io/
 ### Deploy to AWS S3
 https://medium.com/@wolovim/deploying-create-react-app-to-s3-or-cloudfront-48dae4ce0af
 
+### Social login with Google
+https://dzone.com/articles/login-with-google-using-reactjs
+https://reactrouter.com/web/example/auth-workflow
+
 ## Available Scripts
 
 In the project directory, you can run:
