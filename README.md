@@ -2,6 +2,8 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+Live demo: http://stories-frontend.s3-website.eu-west-2.amazonaws.com (works unless database is turned off ;0)
+
 ## Useful links
 
 ### React & TypeScript
