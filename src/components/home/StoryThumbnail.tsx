@@ -16,7 +16,7 @@ export const StoryThumbnail: React.FC<Props> = ({ story }) => {
         <span className="ml-1">{story.author}</span>
       </div>
       <div className="font-bold mb-1">
-        <a href={`/${story.id}`}>{story.title}</a>
+        <a href={`/stories/${story.id}`}>{story.title}</a>
       </div>
       <div className="text-sm text-gray-400">
         {shortDate(story.publishedDate)}

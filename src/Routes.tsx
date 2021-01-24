@@ -10,7 +10,7 @@ export function Routes() {
   return (
     <Switch>
       <Route exact path="/" component={HomeView} />
-      <Route path="/:id" component={ReadStoryView} />
+      <Route path="/stories/:id" component={ReadStoryView} />
 
       <PrivateRoute path="/stories">
         <StoriesView />
