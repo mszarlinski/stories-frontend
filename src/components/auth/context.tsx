@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState } from "react";
+import { UserData } from "./model";
 
 const TOKEN_KEY = "jwt";
 
@@ -19,8 +20,8 @@ export const TokenStore = {
  * refer to: https://usehooks.com/useAuth/
  */
 export const AuthContext = createContext({
-  token: null as null | string,
-  signin: (string) => {},
+  userData: null as UserData | null,
+  signin: (string, UserData) => {},
   signout: () => {},
 });
 
@@ -34,20 +35,20 @@ export const ProvideAuth = ({ children }) => {
 };
 
 function useProvideAuth() {
-  const [token, setToken] = useState(TokenStore.getToken());
+  const [userData, setUserData] = useState(null);
 
-  const signin = (token) => {
+  const signin = (token, userData) => {
     TokenStore.saveToken(token);
-    setToken(token);
+    setUserData(userData);
   };
 
   const signout = () => {
     TokenStore.clear();
-    setToken(null);
+    setUserData(null);
   };
 
   return {
-    token,
+    userData,
     signin,
     signout,
   };

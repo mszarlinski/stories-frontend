@@ -6,7 +6,7 @@ import { useAuth } from "../auth/context";
 import { LoginButton } from "../auth/LoginButton";
 
 export function Navbar() {
-  const { token } = useAuth();
+  const { userData } = useAuth();
 
   return (
     <nav>
@@ -14,13 +14,13 @@ export function Navbar() {
         <div className="flex justify-between items-center">
           <div>
             <a href="/">
-              <img src={StoriesLogo} />
+              <img src={StoriesLogo} alt="Stories" />
             </a>
           </div>
           <div className="flex">
             <SearchBar />
-            {token ? (
-              <DropdownMenu user={token.substr(0, 3)} />
+            {userData ? (
+              <DropdownMenu user={userData} />
             ) : (
               <LoginButton />
             )}

@@ -3,12 +3,12 @@ import React from "react";
 import { useAuth } from "./context";
 
 export const PrivateRoute = ({ children, ...rest }) => {
-  const { token } = useAuth();
+  const { userData } = useAuth();
   return (
     <Route
       {...rest}
       render={({ location }) =>
-        token ? (
+        userData ? (
           children
         ) : (
           <Redirect

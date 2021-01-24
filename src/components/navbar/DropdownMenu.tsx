@@ -1,18 +1,19 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { useAuth } from "../auth/context";
+import { UserData } from "../auth/model";
 
 type Props = {
-  user: string;
+  user: UserData;
 };
 
 export const DropdownMenu: React.FC<Props> = ({ user }) => {
   const [showMenu, setShowMenu] = useState(false);
-  const auth = useAuth();
+  const { signout } = useAuth();
   const history = useHistory();
 
   const handleSingOut = () => {
-    auth.signout();
+    signout();
     setShowMenu(false);
     history.push("/");
   };
@@ -23,12 +24,11 @@ export const DropdownMenu: React.FC<Props> = ({ user }) => {
         className="block rounded-full overflow-hidden w-8 h-8 border focus:outline-none"
         onClick={() => setShowMenu(!showMenu)}
       >
-        {/*<img*/}
-        {/*  className="h-full w-full object-cover"*/}
-        {/*  src="https://miro.medium.com/fit/c/64/64/0*GswhCBgzTPj16QtP"*/}
-        {/*  alt="Maciej Szarlinski"*/}
-        {/*/>*/}
-        <div>{user}</div>
+        <img
+          className="h-full w-full object-cover"
+          src={user.pictureUrl}
+          alt={`${user.name} ${user.lastName}`}
+        />
       </button>
       {showMenu && (
         <div className="rounded shadow-xl border absolute mt-5 text-gray-500 bg-white">
