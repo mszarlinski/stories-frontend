@@ -27,7 +27,7 @@ export const StoriesView = () => {
         {stories.map((s) => (
           <div className="m-3 pt-3 border-t border-gray-300" key={s.id}>
             <div className="text-md font-bold">
-              <a href={`/${s.id}`}>{s.title}</a>
+              <a href={`/stories/${s.id}`}>{s.title}</a>
             </div>
             <div className="text-md text-gray-500 pb-3">{s.preview}</div>
             <div className="text-sm text-gray-500 mb-1">

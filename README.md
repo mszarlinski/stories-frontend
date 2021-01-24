@@ -2,6 +2,8 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+Live demo: http://stories-frontend.s3-website.eu-west-2.amazonaws.com (works unless database is turned off ;0)
+
 ## Useful links
 
 ### React & TypeScript
@@ -29,6 +31,10 @@ https://maketext.io/
 
 ### Deploy to AWS S3
 https://medium.com/@wolovim/deploying-create-react-app-to-s3-or-cloudfront-48dae4ce0af
+
+### Social login with Google
+https://dzone.com/articles/login-with-google-using-reactjs
+https://reactrouter.com/web/example/auth-workflow
 
 ## Available Scripts
 

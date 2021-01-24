@@ -1,19 +1,33 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+import { useAuth } from "../auth/context";
+import { UserData } from "../auth/model";
 
-export function DropdownMenu() {
+type Props = {
+  user: UserData;
+};
+
+export const DropdownMenu: React.FC<Props> = ({ user }) => {
   const [showMenu, setShowMenu] = useState(false);
+  const { signout } = useAuth();
+  const history = useHistory();
+
+  const handleSingOut = () => {
+    signout();
+    setShowMenu(false);
+    history.push("/");
+  };
 
   return (
     <div>
       <button
-        className="block rounded-full overflow-hidden w-8 h-8 focus:outline-none"
+        className="block rounded-full overflow-hidden w-8 h-8 border focus:outline-none"
         onClick={() => setShowMenu(!showMenu)}
       >
         <img
           className="h-full w-full object-cover"
-          src="https://miro.medium.com/fit/c/64/64/0*GswhCBgzTPj16QtP"
-          alt="Maciej Szarlinski"
+          src={user.pictureUrl}
+          alt={`${user.name} ${user.lastName}`}
         />
       </button>
       {showMenu && (
@@ -34,15 +48,14 @@ export function DropdownMenu() {
               Stories
             </span>
           </Link>
-          <a
-            onClick={() => setShowMenu(false)}
-            href="#"
+          <button
+            onClick={handleSingOut}
             className="block px-4 py-2 font-light hover:text-black"
           >
             Sign out
-          </a>
+          </button>
         </div>
       )}
     </div>
   );
-}
+};
