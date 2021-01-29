@@ -21,7 +21,7 @@ export const StoryCreatorView = () => {
     setTimeout(() => {
       history.push("/stories");
       setShowModal(false);
-    }, 3000);
+    }, 2000);
   };
 
   return (

@@ -7,7 +7,6 @@ import { LoginButton } from "../auth/LoginButton";
 
 export function Navbar() {
   const { userData } = useAuth();
-
   return (
     <nav>
       <div className="container pb-6 mb-6 border-b border-gray-300">
@@ -19,11 +18,7 @@ export function Navbar() {
           </div>
           <div className="flex">
             <SearchBar />
-            {userData ? (
-              <DropdownMenu user={userData} />
-            ) : (
-              <LoginButton />
-            )}
+            {userData ? <DropdownMenu user={userData} /> : <LoginButton />}
           </div>
         </div>
       </div>

@@ -1,17 +1,17 @@
 import React, { createContext, useContext, useState } from "react";
 import { UserData } from "./model";
 
-const TOKEN_KEY = "jwt";
+const CURRENT_USER_KEY = "currentUser";
 
-export const TokenStore = {
-  getToken() {
-    return sessionStorage.getItem(TOKEN_KEY);
+export const CurrentUser = {
+  get() {
+    return JSON.parse(localStorage.getItem(CURRENT_USER_KEY) as string);
   },
-  saveToken(token: string) {
-    sessionStorage.setItem(TOKEN_KEY, token);
+  set(userData: UserData) {
+    localStorage.setItem(CURRENT_USER_KEY, JSON.stringify(userData));
   },
-  clear() {
-    sessionStorage.removeItem(TOKEN_KEY);
+  reset() {
+    localStorage.removeItem(CURRENT_USER_KEY);
   },
 };
 
@@ -21,7 +21,7 @@ export const TokenStore = {
  */
 export const AuthContext = createContext({
   userData: null as UserData | null,
-  signin: (string, UserData) => {},
+  signin: (UserData) => {},
   signout: () => {},
 });
 
@@ -35,15 +35,15 @@ export const ProvideAuth = ({ children }) => {
 };
 
 function useProvideAuth() {
-  const [userData, setUserData] = useState(null);
+  const [userData, setUserData] = useState(CurrentUser.get());
 
-  const signin = (token, userData) => {
-    TokenStore.saveToken(token);
+  const signin = (userData) => {
+    CurrentUser.set(userData);
     setUserData(userData);
   };
 
   const signout = () => {
-    TokenStore.clear();
+    CurrentUser.reset();
     setUserData(null);
   };
 

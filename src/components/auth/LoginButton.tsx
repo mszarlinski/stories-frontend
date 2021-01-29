@@ -1,5 +1,8 @@
 import React from "react";
-import GoogleLogin, { GoogleLoginResponse, GoogleLoginResponseOffline } from "react-google-login";
+import GoogleLogin, {
+  GoogleLoginResponse,
+  GoogleLoginResponseOffline,
+} from "react-google-login";
 import { useHistory, useLocation } from "react-router-dom";
 import { useAuth } from "./context";
 import { signIn } from "./api";
@@ -16,10 +19,9 @@ export const LoginButton = () => {
   const onSuccess = (res: GoogleLoginResponse | GoogleLoginResponseOffline) => {
     const googleResponse = res as GoogleLoginResponse;
 
-    signIn(googleResponse.tokenId) //TODO przeslac googleResponse jako body i do sessionStorage zapisac zwrotke + jwtId
-      .then((userData) => {
-        auth.signin(googleResponse.tokenId, userData);
-      });
+    signIn(googleResponse.tokenId).then((response) => {
+      auth.signin({ ...response, token: googleResponse.tokenId });
+    });
 
     const { from } = location.state || { from: { pathname: "/" } };
     history.replace(from);
