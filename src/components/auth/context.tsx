@@ -5,13 +5,13 @@ const CURRENT_USER_KEY = "currentUser";
 
 export const CurrentUser = {
   get() {
-    return JSON.parse(sessionStorage.getItem(CURRENT_USER_KEY) as string);
+    return JSON.parse(localStorage.getItem(CURRENT_USER_KEY) as string);
   },
   set(userData: UserData) {
-    sessionStorage.setItem(CURRENT_USER_KEY, JSON.stringify(userData));
+    localStorage.setItem(CURRENT_USER_KEY, JSON.stringify(userData));
   },
   reset() {
-    sessionStorage.removeItem(CURRENT_USER_KEY);
+    localStorage.removeItem(CURRENT_USER_KEY);
   },
 };
 
